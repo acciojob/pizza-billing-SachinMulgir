@@ -14,10 +14,10 @@ public class Pizza {
     private int paperBag;
     private int basePrice;
     private int toppings;
-    private int cheesePrice = 80;
-    private int vegTopping = 70;
-    private int nonvegTopping = 120;
-    private int takeaway = 20;
+    private int cheesePrice;
+    private int vegTopping;
+    private int nonvegTopping;
+    private int takeaway;
 
     private Boolean isVeg;
     private boolean isCheeseAdded;
@@ -31,6 +31,8 @@ public class Pizza {
         basePrice = isVeg ? 300 : 400;
         this.price = basePrice;
         paperBag = 20;
+        vegTopping = 70;
+        nonvegTopping = 120;
         this.isCheeseAdded = false;
         this.isToppingAdded = false;
         this.isTakeaway = false;
@@ -43,6 +45,7 @@ public class Pizza {
     public void addExtraCheese(){
         if( !isCheeseAdded ){
             isCheeseAdded = true;
+            cheesePrice = 80;
             price += cheesePrice;
         }
     }
@@ -57,6 +60,8 @@ public class Pizza {
 
     public void addTakeaway(){
         if( !isTakeaway ){
+            isTakeaway = true;
+            takeaway = 20;
             price += takeaway;
         }
     }
