@@ -50,7 +50,8 @@ public class Pizza {
     public void addExtraToppings(){
         if( !isToppingAdded ){
             isToppingAdded = true;
-            price += isVeg ? vegTopping : nonvegTopping;
+            toppings = isVeg ? vegTopping : nonvegTopping;
+            price += toppings;
         }
     }
 
