@@ -33,6 +33,7 @@ public class Pizza {
         paperBag = 20;
         vegTopping = 70;
         nonvegTopping = 120;
+        takeaway = 0;
         this.isCheeseAdded = false;
         this.isToppingAdded = false;
         this.isTakeaway = false;
@@ -61,8 +62,8 @@ public class Pizza {
     public void addTakeaway(){
         if( !isTakeaway ){
             isTakeaway = true;
-            takeaway = 20;
-            price += takeaway;
+            takeaway += paperBag;
+            price += paperBag;
         }
     }
 
@@ -76,7 +77,7 @@ public class Pizza {
             tempBill += "Extra Toppings Added: " + toppings + "\n";
         }
         if( isTakeaway ){
-            tempBill += "Paperbag Added: " + paperBag + "\n";
+            tempBill += "Paperbag Added: " + takeaway + "\n";
         }
         tempBill += "Total Price: " + price + "\n";
         this.bill = tempBill;
